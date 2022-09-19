@@ -1,0 +1,195 @@
+/*AGREGAR OBLIGATORIAMENTE*/
+:root{
+  --rojo: #E63946;
+  --blanco: #F1FAEE;
+  --celeste: #A8DADC;
+  --azulOpaco: #457B9D;
+  --azulRey: #1D3557;
+  --negro: #000000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
+
+h3{text-align: center;}
+h1{text-align: center;}
+
+form{width: 100%;}
+
+main{
+  justify-content: space-between;
+  gap: 50px;
+}
+
+#form-group {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/*----- FORMULARIO PARA PERSONAS -----*/
+
+/* divContenedor */
+.container-formulario{
+  padding: 10px;
+  width: 60%;
+  height: 400px;
+  align-items: center;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 0 25px -9px var(--azulRey); 
+}
+.tituloForm{color: var(--azulOpaco);}
+select, input{
+  border-bottom: 1px solid var(--blanco);
+  border: none;
+  text-align: center;
+  padding: 10px;
+}
+select{width: 100%;}
+input{
+  background-color: transparent;
+  border: none;
+  color: rgb(42, 42, 42);
+  width: 93.5%;
+  transition: 2.5s;
+}
+input:focus{
+  transition: 2.5s;
+  outline: none;
+  background-color: var(--blanco);
+  border: 1px solid var(--rojo);
+  border-radius: 7px;
+}
+input[type="submit"], .botonEditar{
+  background-color: var(--azulRey);
+  border: none;
+  color: var(--blanco);
+  font-weight: bold;
+  border-radius: 10px;
+  width: 50%;
+}
+input[type="submit"]:hover, .botonEditar:hover{
+  cursor: pointer;
+  background-color: var(--azulOpaco);
+}
+.submit{align-items: center;}
+::placeholder{
+  text-align: center;
+  color: gray;
+}
+
+/*----- FINAL PARA FORMULARIO PARA PERSONAS -----*/
+
+/*----- REGISTRO DE LAS PERSONAS -----*/
+.container-registro{
+  width: 70%;
+  justify-content: start;
+  height: 400px;
+  flex-grow: 2;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  flex-direction: column;
+  overflow: hidden scroll;
+}
+.empty{color: var(--rojo);}
+.full{color: var(--azulOpaco);}
+
+.info-clientes{
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 9px;
+  box-shadow: 0 0 25px -9px var(--azulRey);
+}
+.tituloLista{
+  position: relative;
+  top: 0;
+  text-align: center;
+}
+
+.div-botones{
+  gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.boton{
+  padding: 7px;
+  margin: 13px 0 0 0;
+  width: 30%;
+  text-align: center;
+  color: var(--blanco);
+  border-radius: 8px;
+}
+#editar{
+  transition: 1s;
+  background-color: var(--azulRey);
+}
+#editar:hover{
+  transition: 1s;
+  cursor: pointer;
+  background-color: var(--azulOpaco);
+}
+#eliminar{
+  transition: 1s;
+  background-color: rgb(199, 29, 29);
+}
+#eliminar:hover{
+  transition: 1s;
+  cursor: pointer;
+  background-color: var(--rojo);
+}
+/*----- BARRA SCROLL -----*/
+.container-registro::-webkit-scrollbar,
+body::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.container-registro::-webkit-scrollbar:vertical,            
+body::-webkit-scrollbar:vertical{
+  width: 5px;
+}
+.container-registro::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb{
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+/*----- FINAL PARA REGISTRO DE LAS PERSONAS -----*/
+
+/* ------ VENTANA MODAL ----- */
+.contenedor-modal{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.771);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.ventana-modal{
+  position: relative;
+  padding: 10px;
+  font-size: 1.5em;
+  background-color: #fff;
+  width: auto;
+  border-radius: .5em;
+  z-index: 1;
+  text-align: center;
+}
+
+@media (max-width: 800px){
+  main{
+      flex-wrap: wrap;
+  }
+  .container-formulario,
+  .container-registro{
+      width: 500px;
+  }
+}
